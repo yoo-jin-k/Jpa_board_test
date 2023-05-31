@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/test_db
+    username: root
+    password: 1234
+  jpa:
+    database:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    prefix: classpath:templates/
+    suffix: .html
