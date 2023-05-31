@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>게시판</title>
+
+  <!-- 합쳐지고 최소화된 최신 CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+  <!-- 부가적인 테마 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="panel-heading"><h1>게시판</h1></div>
+
+<div class="panel-body">
+
+  <table class="table table-striped table-bordered table-hover"
+         id="dataTables-example">
+    <thead>
+    <tr>
+      <th>custCd</th>
+      <th>bizCd</th>
+      <th>custNm</th>
+      <th>abbrNm</th>
+      <th>bizregNo</th>
+      <th>bizType</th>
+      <th>ceoNm</th>
+      <th>compNm</th>
+      <th>addr1</th>
+      <th>addr2</th>
+      <th>zipCd</th>
+      <th>tel1</th>
+      <th>tel2</th>
+      <th>fax</th>
+      <th>email</th>
+      <th>orderNum</th>
+      <th>rmk</th>
+      <th>useYn</th>
+      <th>delYn</th>
+      <th>regId</th>
+      <th>regDt</th>
+      <th>modId</th>
+      <th>modDt</th>
+      <th>picNm</th>
+      <th>picTel</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="odd gradeX" th:each="comCost : ${comCostList}">
+      <td th:text="${comCost.custCd}"></td>
+      <td th:text="${comCost.bizCd}"></td>
+<!--      <td><a th:text="${comCost.custNm}" th:href="@{/comCost/list/{custCd}(custCd=${comCost.custCd})}"></a></td>-->
+      <td th:text="${comCost.abbrNm}"></td>
+      <td th:text="${comCost.bizregNo}"></td>
+
+      <td th:text="${comCost.bizType}"></td>
+      <td th:text="${comCost.ceoNm}"></td>
+      <td th:text="${comCost.compNm}"></td>
+      <td th:text="${comCost.addr1}"></td>
+      <td th:text="${comCost.addr2}"></td>
+      <td th:text="${comCost.zipCd}"></td>
+      <td th:text="${comCost.tel1}"></td>
+      <td th:text="${comCost.tel2}"></td>
+      <td th:text="${comCost.fax}"></td>
+      <td th:text="${comCost.email}"></td>
+      <td th:text="${comCost.orderNum}"></td>
+      <td th:text="${comCost.rmk}"></td>
+      <td th:text="${comCost.useYn}"></td>
+      <td th:text="${comCost.delYn}"></td>
+      <td th:text="${comCost.regId}"></td>
+      <td th:text="${comCost.regDt}"></td>
+      <td th:text="${comCost.modId}"></td>
+      <td th:text="${comCost.modDt}"></td>
+      <td th:text="${comCost.picNm}"></td>
+      <td th:text="${comCost.picTel}"></td>
+
+    </tr>
+    </tbody>
+
+  </table>
+
+
+  <a class = "btn btn-primary float-end" th:href="@{/comCost/write}" type="button">글쓰기</a>
+
+<!--  <nav style="text-align: center;">-->
+<!--    <ul class="pagination"-->
+<!--        th:with="start=${T(java.lang.Math).floor(comCostList.number/10) * 10 +1 },-->
+<!--                 last=(${start + 9 < comCostList.totalPages ? start + 9 : comCostList.totalPages})">-->
+
+
+
+<!--      <li>-->
+<!--        <a th:href="@{/comCost/list(page=1)}" aria-label="First">-->
+<!--          <span aria-hidden="true">처음</span>-->
+<!--        </a>-->
+<!--      </li>-->
+
+<!--      <li th:class="${comCostList.first} ? 'disabled'">-->
+<!--        <a th:href="${comCostList.first} ? '#' :@{/comCost/list(page=${comCostList.number})}" aria-label="Previous">-->
+<!--          <span aria-hidden="true">&lt;</span>-->
+<!--        </a>-->
+<!--      </li>-->
+
+<!--      <li th:each="page: ${#numbers.sequence(start, last)}" th:class="${page == comCostList.number + 1} ? 'active'">-->
+<!--        <a th:text="${page}" th:href="@{/comCost/list(page=${page})}"></a>-->
+<!--      </li>-->
+
+<!--      <li th:class="${comCostList.last} ? 'disabled'">-->
+<!--        <a th:href="${comCostList.last} ? '#' : @{/comCost/list(page=${comCostList.number + 2})}" aria-label="Next">-->
+<!--          <span aria-hidden="true">&gt;</span>-->
+<!--        </a>-->
+<!--      </li>-->
+
+<!--      <li>-->
+<!--        <a th:href="@{/comCost/list(page=${comCostList.totalPages})}" aria-label="Last">-->
+<!--          <span aria-hidden="true">끝</span>-->
+<!--        </a>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </nav>-->
+
+</div>
+
+
+</div>
+
+</body>
+</html>
