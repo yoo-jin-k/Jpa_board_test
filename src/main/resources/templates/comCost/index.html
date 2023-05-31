@@ -3,20 +3,14 @@
       xmlns:th="http://www.thymleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>게시판</title>
-
-  <!-- 합쳐지고 최소화된 최신 CSS -->
+  <title>comCost List</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-  <!-- 부가적인 테마 -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<div class="panel-heading"><h1>게시판</h1></div>
+<div class="panel-heading"><h1>comCost List</h1></div>
 
 <div class="panel-body">
 
@@ -55,7 +49,7 @@
     <tr class="odd gradeX" th:each="comCost : ${comCostList}">
       <td th:text="${comCost.custCd}"></td>
       <td th:text="${comCost.bizCd}"></td>
-<!--      <td><a th:text="${comCost.custNm}" th:href="@{/comCost/list/{custCd}(custCd=${comCost.custCd})}"></a></td>-->
+      <td><a th:text="${comCost.custNm}" th:href="@{/comCost/list/{custCd}(custCd=${comCost.custCd})}"></a></td>
       <td th:text="${comCost.abbrNm}"></td>
       <td th:text="${comCost.bizregNo}"></td>
 
