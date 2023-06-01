@@ -22,6 +22,7 @@ public class ComCostServiceImpl implements ComCostService {
 
     private final ComCostRepository comCostRepository;
 
+    // 페이지별로 ComCost 엔티티를 조회하여 반환하는 메소드
     @Override
     public Page<ComCost> pageList(Pageable pageable){
         int page = (pageable.getPageNumber() == 0) ? 0 : (pageable.getPageNumber()-1);
@@ -29,18 +30,20 @@ public class ComCostServiceImpl implements ComCostService {
         return comCostRepository.findAll(pageable);
     }
 
-//    @Override
-//    public String write(ComCost comCost) throws Exception {
-//        ComCost write = comCostRepository.save(comCost);
-//        return write.getCustCd();
-//    }
 
-//    검색 조건 없이 모두 검색
+    // 특정 키워드를 포함하는 ComCost 엔티티를 검색하여 페이지별로 반환하는 메소드
     @Override
     public Page<ComCost> searchByKeyword(String keyword, Pageable pageable) {
         return comCostRepository.searchByKeyword(keyword, pageable);
     }
 
+    //    @Override
+    //    public String write(ComCost comCost) throws Exception {
+    //        ComCost write = comCostRepository.save(comCost);
+    //        return write.getCustCd();
+    //    }
+
+    // ComCost 엔티티를 등록하는 메소드
     @Override
     public String write(ComCost comCost) throws Exception {
 
@@ -65,11 +68,13 @@ public class ComCostServiceImpl implements ComCostService {
         // 생성된 custCd를 params 객체에 설정
         comCost.setCustCd(id);
 
-    ComCost write = comCostRepository.save(comCost);
+        // ComCost 엔티티를 저장하고 저장된 객체 반환
+        ComCost write = comCostRepository.save(comCost);
 
-    return write.getCustCd();
-}
+        return write.getCustCd();
+    }
 
+    // 특정 custCd에 해당하는 ComCost 엔티티를 조회하여 반환하는 메소드
     @Override
     public ComCost detail(String custCd) throws Exception{
         Optional<ComCost> comCost = comCostRepository.findById(custCd);
@@ -77,6 +82,7 @@ public class ComCostServiceImpl implements ComCostService {
     }
 
 
+    // 특정 custCd에 해당하는 ComCost 엔티티를 삭제하는 메소드
     @Override
     public ComCost delete(String custCd) throws Exception {
         ComCost comCost = comCostRepository.findById(custCd)
