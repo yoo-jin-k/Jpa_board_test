@@ -9,6 +9,8 @@ public interface ComCostService {
 
     public Page<ComCost> pageList(Pageable pageable); //페이징 처리
 
+    Page<ComCost> searchByKeyword(String keyword, Pageable pageable); // 검색 추가
+
     public String write(ComCost comCost) throws Exception; // 게시글 작성
 
     public ComCost detail(String custCd) throws  Exception; // 게시글 상세 보기

@@ -4,6 +4,7 @@ import com.board.model.Board;
 import com.board.model.ComCost;
 import com.board.service.ComCostService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
@@ -20,12 +21,28 @@ public class ComCostController {
     private final ComCostService comCostService;
 
     //게시글 조회
+//    @GetMapping("/list")
+//    public String comCostList(Model model, @PageableDefault Pageable pageable) throws Exception {
+//
+////        List<ComCost> comCostService = comCostService.list();
+//        model.addAttribute("comCostList", comCostService.pageList(pageable));
+//
+//        return "comCost/index";
+//    }
+
+    // 게시글 조회 ,검색기능
     @GetMapping("/list")
-    public String comCostList(Model model, @PageableDefault Pageable pageable) throws Exception {
-
-//        List<ComCost> comCostService = comCostService.list();
-        model.addAttribute("comCostList", comCostService.pageList(pageable));
-
+    public String comCostList(Model model, @PageableDefault Pageable pageable,
+                              @RequestParam(value = "keyword", required = false) String keyword) throws Exception {
+        Page<ComCost> comCostPage;
+        if (keyword != null && !keyword.isEmpty()) {
+            // Perform search using the keyword
+            comCostPage = comCostService.searchByKeyword(keyword, pageable);
+        } else {
+            // Retrieve all ComCost entities without any search condition
+            comCostPage = comCostService.pageList(pageable);
+        }
+        model.addAttribute("comCostList", comCostPage);
         return "comCost/index";
     }
 

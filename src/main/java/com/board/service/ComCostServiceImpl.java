@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -32,6 +34,13 @@ public class ComCostServiceImpl implements ComCostService {
 //        ComCost write = comCostRepository.save(comCost);
 //        return write.getCustCd();
 //    }
+
+//    검색 조건 없이 모두 검색
+    @Override
+    public Page<ComCost> searchByKeyword(String keyword, Pageable pageable) {
+        return comCostRepository.searchByKeyword(keyword, pageable);
+    }
+
     @Override
     public String write(ComCost comCost) throws Exception {
 
