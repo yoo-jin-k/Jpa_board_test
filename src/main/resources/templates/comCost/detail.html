@@ -11,7 +11,7 @@
 <body>
 
 <div class="panel-heading"><h1>comCost Detail Page</h1></div>
-
+<div class="details-table" style="max-width: 500px">
 <form>
     <div class="form-group">
         <label for="custCd">custCd</label>
@@ -27,7 +27,7 @@
     <div class="form-group">
         <label for="abbrNm">abbrNm</label>
         <p class="form-control" id="abbrNm" name="abbrNm"
-           th:text="${detailBoard.abbrNm}"></p>
+           th:text="${detailComCost.abbrNm}"></p>
     </div>
 
 <!--    <a class = "btn btn-primary float-end" th:href = "@{/comCost/list/edit/{custCd}(custCd=${detailComCost.custCd})}"-->
@@ -37,6 +37,7 @@
 <!--    <a href="/comCost/list" role="button" class="btn btn-primary">취소</a>-->
 
 </form>
+</div>
 
 </div>
 

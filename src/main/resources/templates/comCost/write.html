@@ -3,42 +3,138 @@
       xmlns:th="http://www.thymleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>게시판</title>
-
-  <!-- 합쳐지고 최소화된 최신 CSS -->
+  <title>comCost Write</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-  <!-- 부가적인 테마 -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 
-<h1>게시글 등록</h1>
+<h1>comCost Write</h1>
 
 <div class="col-md-12">
   <div class="col-md-4">
-    <form action="/board/list" method="post">
+    <form action="/comCost/list" method="post">
       <div class="form-group">
-        <label for="title" >제목</label>
+        <label for="custCd" >custCd</label>
         <input type="text" class="form-control"
-               id="title" name="title" placeholder="제목을 입력하세요.">
+               id="custCd" name="custCd" placeholder="custCd">
       </div>
       <div class="form-group">
-        <label for="name">작성자</label>
+        <label for="bizCd" >bizCd</label>
         <input type="text" class="form-control"
-          id="name"  name="name" placeholder="작성자를 입력하세요">
+               id="bizCd" name="bizCd" placeholder="bizCd">
       </div>
       <div class="form-group">
-        <label for="content">내용</label>
-        <textarea class="form-control" id="content" name="content"
-                  placeholder="내용을 입력하세요"></textarea>
+        <label for="custNm">custNm</label>
+        <input type="text" class="form-control"
+          id="custNm"  name="custNm" placeholder="custNm">
+      </div>
+      <div class="form-group">
+        <label for="abbrNm">abbrNm</label>
+        <input type="text" class="form-control"
+               id="abbrNm"  name="abbrNm" placeholder="abbrNm">
+      </div>
+      <div class="form-group">
+        <label for="bizregNo">bizregNo</label>
+        <textarea class="form-control" id="bizregNo" name="bizregNo"
+                  placeholder="bizregNo"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="bizType">bizType</label>
+        <textarea class="form-control" id="bizType" name="bizType"
+                  placeholder="bizType"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="ceoNm">ceoNm</label>
+        <textarea class="form-control" id="ceoNm" name="ceoNm"
+                  placeholder="ceoNm"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="compNm">compNm</label>
+        <textarea class="form-control" id="compNm" name="compNm"
+                  placeholder="compNm"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="addr1">addr1</label>
+        <textarea class="form-control" id="addr1" name="addr1"
+                  placeholder="addr1"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="addr2">addr2</label>
+        <textarea class="form-control" id="addr2" name="addr2"
+                  placeholder="addr2"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="zipCd">zipCd</label>
+        <textarea class="form-control" id="zipCd" name="zipCd"
+                  placeholder="zipCd"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="tel1">tel1</label>
+        <textarea class="form-control" id="tel1" name="tel1"
+                  placeholder="tel1"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="tel2">tel2</label>
+        <textarea class="form-control" id="tel2" name="tel2"
+                  placeholder="tel2"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="fax">fax</label>
+        <textarea class="form-control" id="fax" name="fax"
+                  placeholder="fax"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="email">email</label>
+        <textarea class="form-control" id="email" name="email"
+                  placeholder="email"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="orderNum">orderNum</label>
+        <textarea class="form-control" id="orderNum" name="orderNum"
+                  placeholder="orderNum"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="rmk">rmk</label>
+        <textarea class="form-control" id="rmk" name="rmk"
+                  placeholder="rmk"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="useYn">useYn</label>
+        <textarea class="form-control" id="useYn" name="useYn"
+                  placeholder="useYn"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="delYn">delYn</label>
+        <textarea class="form-control" id="delYn" name="delYn"
+                  placeholder="delYn"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="regId">regId</label>
+        <textarea class="form-control" id="regId" name="regId"
+                  placeholder="regId"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="modId">modId</label>
+        <textarea class="form-control" id="modId" name="modId"
+                  placeholder="modId"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="picNm">picNm</label>
+        <textarea class="form-control" id="picNm" name="picNm"
+                  placeholder="picNm"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="picTel">picTel</label>
+        <textarea class="form-control" id="picTel" name="picTel"
+                  placeholder="picTel"></textarea>
       </div>
       <button type="submit" class="btn btn-primary" id="btn-save" >등록</button>
-      <a href="/board/list" role="button" class="btn btn-primary">취소</a>
+      <a href="/comCost/list" role="button" class="btn btn-primary">취소</a>
     </form>
   </div>
 

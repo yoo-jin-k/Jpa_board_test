@@ -3,6 +3,7 @@ package com.board.model;
 import com.board.model.common.BaseUseStatus;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
@@ -10,10 +11,26 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Table(name = "TB_COM_CUST")
+//@TableGenerator(
+//        name = "COST_SEQ_GENERATOR",
+//        table = "TB_SEQUENCES",
+//        pkColumnValue = "COST_SEQ", allocationSize = 50
+//)
 public class ComCost {
 
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.TABLE, generator = "COST_SEQ_GENERATOR")
+//    @Column(name = "CUST_CD")
+//    private String custCd;
+
+//    @Id
+//    @GeneratedValue(generator = "COST_GENERATOR")
+//    @GenericGenerator(name="COST_GENERATOR", strategy = "uuid")
+//    @Column(name = "CUST_CD")
+//    private String custCd;
+
+    //    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "COST_SEQ_GENERATOR")
     @Column(name = "CUST_CD")
     private String custCd;
 
