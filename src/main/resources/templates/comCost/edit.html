@@ -3,30 +3,75 @@
       xmlns:th="http://www.thymleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>게시판</title>
-
-    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <title>comCost edit page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-    <!-- 부가적인 테마 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 
-<h1>게시글 수정</h1>
+<h1>comCost edit page</h1>
 
 <div class="col-md-12">
     <div class="col-md-4">
-        <form th:action = "@{/board/list/edit/{id}(id=${editBoard.id})}" method="post">
+        <form th:action = "@{/comCost/list/edit/{custCd}(custCd=${editComCost.custCd})}" method="post">
             <div class="form-group">
-                <label for="title" >제목</label>
+                <label for="bizCd" >bizCd</label>
                 <input type="text" class="form-control"
-                       id="title" name="title" th:value = "${editBoard.title}" placeholder="제목을 입력하세요.">
+                       id="bizCd" name="bizCd" th:value = "${editComCost.bizCd}" placeholder="bizCd">
             </div>
+
+            <div class="form-group">
+                <label for="bizCd" >bizCd</label>
+                <input type="text" class="form-control"
+                       id="bizCd" name="bizCd" th:value = "${editComCost.bizCd}" placeholder="bizCd">
+            </div>
+            <div class="form-group">
+                <label for="bizCd" >bizCd</label>
+                <input type="text" class="form-control"
+                       id="bizCd" name="bizCd" th:value = "${editComCost.bizCd}" placeholder="bizCd">
+            </div>
+            <div class="form-group">
+                <label for="bizCd" >bizCd</label>
+                <input type="text" class="form-control"
+                       id="bizCd" name="bizCd" th:value = "${editComCost.bizCd}" placeholder="bizCd">
+            </div>
+            <div class="form-group">
+                <label for="bizCd" >bizCd</label>
+                <input type="text" class="form-control"
+                       id="bizCd" name="bizCd" th:value = "${editComCost.bizCd}" placeholder="bizCd">
+            </div>
+            <div class="form-group">
+                <label for="bizCd" >bizCd</label>
+                <input type="text" class="form-control"
+                       id="bizCd" name="bizCd" th:value = "${editComCost.bizCd}" placeholder="bizCd">
+            </div>
+            <div class="form-group">
+                <label for="bizCd" >bizCd</label>
+                <input type="text" class="form-control"
+                       id="bizCd" name="bizCd" th:value = "${editComCost.bizCd}" placeholder="bizCd">
+            </div>
+            <div class="form-group">
+                <label for="bizCd" >bizCd</label>
+                <input type="text" class="form-control"
+                       id="bizCd" name="bizCd" th:value = "${editComCost.bizCd}" placeholder="bizCd">
+            </div>
+            <div class="form-group">
+                <label for="bizCd" >bizCd</label>
+                <input type="text" class="form-control"
+                       id="bizCd" name="bizCd" th:value = "${editComCost.bizCd}" placeholder="bizCd">
+            </div>
+            <div class="form-group">
+                <label for="bizCd" >bizCd</label>
+                <input type="text" class="form-control"
+                       id="bizCd" name="bizCd" th:value = "${editComCost.bizCd}" placeholder="bizCd">
+            </div>
+
+
+
+
+
 
             <div class="form-group">
                 <input type="hidden" class="form-control"
